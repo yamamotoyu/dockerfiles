@@ -7,7 +7,9 @@ RUN apt-get update && \
     fonts-ipafont \
     python-setuptools \
     python-imaging && \
+    python-reportlab && \
     apt-get clean
+
 RUN easy_install pip
 RUN pip install blockdiag seqdiag actdiag nwdiag
 
