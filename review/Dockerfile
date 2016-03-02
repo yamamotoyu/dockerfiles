@@ -8,7 +8,7 @@ RUN apt-get update && \
     python-setuptools \
     python-imaging && \
     apt-get clean
-
+RUN easy_install pip
 RUN pip install blockdiag seqdiag actdiag nwdiag
 
 RUN mkdir /docs
