@@ -14,11 +14,12 @@ RUN easy_install pip
 RUN pip install blockdiag seqdiag actdiag nwdiag
 
 RUN apt-get update && \
-    apt-get install -y defauult-jre && \
-    apt-get clean && \
-    mkdir /java && \
-    cd /java && \
-    wget https://sourceforge.net/projects/plantuml/files/plantuml.jar
+    apt-get install -y default-jre && \
+    apt-get clean
+
+RUN mkdir /java && \
+    curl -sL https://sourceforge.net/projects/plantuml/files/plantuml.jar \
+          > /java/plantuml.jar
 
 RUN mkdir /docs
 WORKDIR /docs
