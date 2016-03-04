@@ -21,6 +21,10 @@ RUN mkdir /java && \
     curl -sL https://sourceforge.net/projects/plantuml/files/plantuml.jar \
           > /java/plantuml.jar
 
+RUN apt-get update && \
+    apt-get install -y  librsvg2-bin && \
+    apt-get clean
+
 RUN mkdir /docs
 WORKDIR /docs
 
